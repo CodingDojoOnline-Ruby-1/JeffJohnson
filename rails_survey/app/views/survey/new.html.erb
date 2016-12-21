@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Survey#new</title>
+</head>
+<body>
+<div id="container">
+		<div class="surveybox" id="user_input">
+			<h2>Survey Form</h2>
+			<div id="form_area">
+				 <form action="/survey/show" method="post" id="usrform">
+				 <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+					 <table>
+						<tr>
+						  <td>Name:</td><td><input type="text" name="name" size="25"></td> 
+						</tr>
+						<tr>
+							<td>Dojo Location: </td>
+						  	<td><select name="location">
+									<option value="Chicago">Chicago</option>
+									<option value="Dallas">Dallas</option>
+									<option value="Los Angeles">Los Angeles</option>
+									<option value="Mountain View">Mountain View</option>
+									<option value="Seattle">Seattle</option>
+									<option value="Silicon Valley">Silicon Valley</option>
+									<option value="Washington D.C.">Washington D.C.</option>
+							</select></td>
+						<tr>
+						 	<td>Favorite Language: </td>
+							<td><select name="language">
+							  <option value="Python">Python</option>
+							  <option value="Java">Java</option>
+							  <option value="Ruby">Ruby</option>
+							  <option value="PHP">PHP</option>
+							</select></td>
+						</tr>
+					</table>
+					<p id='comment_label'>Comment (optional):</p>
+						<textarea rows="4" cols="45" name="comment" form="usrform"></textarea><br>
+				 <button type="submit" class="btn btn-primary" form="usrform" value="Submit">Submit</button>
+				</form> 				
+			</div>
+		
+		</div> <!-- end surveybox -->
+
+
+	</div> <!-- end container -->
+
+</body>
+</html>

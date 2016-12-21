@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RandomWordGen</title>
+
+</head>
+<body>
+<div id='container'>
+
+	<h2>Random Word Generator</h2>
+	<div>
+		<h3>Random Word (attempt #<%= @count %>)</h3>
+
+		<h1 id="display"><%= @word %></h1>
+	</div>
+	<form action="/" method="get">
+		<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+		<input type="submit" name="generate" value="Generate">
+	</form>
+</div>
+</body>
+</html>

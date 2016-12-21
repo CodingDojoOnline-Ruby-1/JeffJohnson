@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Number Game</title>
+	<meta charset="utf-8">
+	<!-- Latest boostrap compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+<body>
+	<div class="container">
+		<div class="box">
+			<h1>Great Number Game</h1>
+			<div id="form_area">
+			<h3>Welcome to the Great Number Game!</h3>
+			<h4>I am thinking of a number between 1 and 100</h4>
+			<h5>Take a guess!</h5>
+
+			<% if @guess == 'high' %>
+				<h2 id="high">Too high!</h2>
+			<% end %>
+			<% if @guess== 'low' %>
+				<h2 id="low">Too low!</h2>
+			<% end %>
+			<% if @guess== "correct" %>
+				<div id="correct">
+					<h3> <%= @guessNo %> was the number!</h3>
+					<form action="/again", method="get">
+						<button class="btn btn-primary" type="submit" formaction="/again" value="true">Play again!</button>
+					</form>
+				</div>  
+			<% end %>
+			<% if @guess != 'correct' %>
+				<form action="/guess" method="get">
+				<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+					<input type="text" name="u_guess" autofocus size="3"><br>
+					<button class="btn btn-primary" type="submit" formaction="/guess" value="Submit">Submit</button>				
+				</form>
+			<% end %>
+			
+			</div> <!-- end form area -->
+			<div id="filler"> </div> 
+		</div> <!-- end box -->
+	</div> <!-- end container -->
+	
+</body>
+</html>

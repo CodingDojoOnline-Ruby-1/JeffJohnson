@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Survey#show</title>
+</head>
+<body>
+<div id='container'>
+	<h2>Survey Form</h2>
+	
+	<div id="survey_results">
+	<h4>Thanks for submitting this form!  You have submitted this form <%= @count %> times.</h4>
+		<p><u>Submitted Info:</u></p>
+			<table>
+				<tr>
+				  <td>Name:</td><td><%= @name %></td> 
+				</tr>
+				<tr>
+					<td>Dojo Location:</td><td><%= @location %></td>
+				<tr>
+				 	<td>Favorite Language:</td><td><%= @language %> </td>
+				</tr>
+				<tr>
+					<td>Comment:</td><td> <%= @comment %></td>
+				</tr>
+			</table>
+		
+			<form action="/" method="get" id="return">			
+				<button type="submit" class="btn btn-primary" form="return" value="Submit">Go Back</button>
+
+			</form>							
+		</div>
+</div>
+</body>
+</html>
+
+
+
+
