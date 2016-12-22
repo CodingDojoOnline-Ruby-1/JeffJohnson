@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Users#show</title>
+</head>
+<body>
+
+<div id="container">
+<h1>Selected User Information</h1>
+	
+	<div id="display">
+	<table id="user_table">
+		<tr>
+			<td>First Name:</td>
+			<td><%= @user.first_name %></td>
+		</tr>
+		<tr>
+			<td>Last Name:</td>
+			<td><%= @user.last_name %></td>
+		</tr>	
+		<tr>
+			<td>Email:</td>
+			<td><%= @user.email %></td>
+		</tr>
+	</table>	
+	</div>
+	<div class="optionlinks">
+		<p><a href="/users/<%= @user.id %>/edit">Edit</a> | <a href="/">Back</a></p>
+	</div>
+
+</div> 	
+</body>
+</html>
+

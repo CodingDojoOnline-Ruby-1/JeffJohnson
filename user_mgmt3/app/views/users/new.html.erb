@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Log-in / Registration</title>
+<meta charset="utf-8">
+	<!-- Latest boostrap compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	</head>
+<body>
+	<div id="container">
+	<!-- <h1>Login Registration</h1> -->		
+			<div class ="formbox" id="register_area">
+				<h1>User Registration Form:</h1>
+				<div id='subcontainer'>
+				<form action="/users/create" id="register_user" method='post'>
+				<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">						<div class="form-group row">
+							<label for="user_fname" class="2 col-form-label">First Name:</label><br>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="user_fname" name="user[first_name]" placeholder="Enter first name">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="user_lname" class="2 col-form-label">Last Name:</label><br>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="user_lname" name="user[last_name]" placeholder="Enter last name">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="user_email" class="2 col-form-label">Email:</label><br>
+							<div class="col-sm-10">
+								<input type="email" class="form-control" id="user_email" name="user[email]" placeholder="Enter email address">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="user_pwd" class="2 col-form-label">Password:</label><br>
+							<div class="col-sm-10">
+								<input type="password" class="form-control" id="user_pwd" name="user[password]" placeholder="Enter password">
+							</div>
+						</div>
+						<!-- <div class="form-group row">
+							<label for="confirm_pwd" class="2 col-form-label">Confirm Password:</label><br>
+							<div class="col-sm-10">
+								<input type="password" class="form-control" id="confirm_upwd" name="user[confirm_pwd]" placeholder="Confirm password">
+							</div>
+						</div> -->
+						<button class="btn btn-primary" type="submit" form="register_user" value="Submit">Register as a new user</button>
+					</form>				
+			</div> <!-- end register box -->
+			<div class="optionlinks">
+				<a href="/">Back</a>
+			</div>	
+			<div id='errors'> <!-- was div flasharea -->
+	    	  	<% if flash[:notice] %>
+					<% flash[:notice].each do |error| %>
+						<p><%= error %> </p>
+					<% end %>
+				<% end %>
+	      </div>
+		</div> <!-- end subcontainer -->
+	</div> <!-- end container -->	
+</body>
+</html>
